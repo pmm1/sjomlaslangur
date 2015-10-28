@@ -62,8 +62,6 @@ localstorage@1.0.5
 logging@1.0.8
 meteor@1.1.10
 meteor-base@1.0.1
-meteorhacks:picker@1.0.3
-meteorhacks:search-source@1.4.1
 meteortoys:toykit@2.1.2
 minifiers@1.1.7
 minimongo@1.0.10
@@ -80,8 +78,10 @@ oauth2@1.1.5
 observe-sequence@1.0.7
 ordered-dict@1.0.4
 peerlibrary:assert@0.2.5
-peerlibrary:base-component@0.10.0
-peerlibrary:blaze-components@0.13.0
+peerlibrary:base-component@0.14.0
+peerlibrary:blaze-components@0.15.1
+peerlibrary:computed-field@0.3.0
+peerlibrary:reactive-field@0.1.0
 promise@0.5.1
 random@1.0.5
 rate-limit@1.0.0

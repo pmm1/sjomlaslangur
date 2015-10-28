@@ -1,7 +1,7 @@
 if (Meteor.isClient) {
 
-  Template.layoutTemplate.onRendered(function() {
-    $('.ui.dropdown').dropdown();
+  Template.layoutTemplate.onRendered(function() {    
+    init();
     this.find('#main')._uihooks = {
       insertElement: function(node, next) {
         $(node)
@@ -15,23 +15,57 @@ if (Meteor.isClient) {
         });
       }
     }
-  });
 
 
 
 
+    function init() {
+      $('.ui.dropdown').dropdown();
+
+      // init modal
+      $('.small.modal').modal();
+
+      $('.genRandom').click(function(e) {
+      /* Act on the event */
+       e.preventDefault();
+
+      $('.sendReport').on('click',mailMan);
 
 
-  /* Template.layoutTemplate.helpers({
-    index: function () {
-      return SlangIndex;
-    },
-    renderTmpl: () => Template.searchPage
-  }); */
+
+       Meteor.call('randomPost', function (error, result) {
+            if (error) {
+              console.log(error);
+            } else {
+              Router.go('randomPage', {_id: result});
+            }
+          });
+      }); 
+
+
+      $(".searchInput").keyup(function (e) {
+          if (e.keyCode == 13) {
+              // Do something
+
+              var searchVal = "/search/" + $(e.target).val().toString();
+              //console.log(searchVal);
+              Router.go(searchVal);
+              $('[name=searchString]').val('');
+          }
+      });
+
+
+    }
+
+
+});
 
 
    Template.layoutTemplate.helpers({
     slangIndex: () => SlangIndex,
     renderTmpl: () => Template.searchPage
   }); 
+
+
+
 };

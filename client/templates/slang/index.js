@@ -151,18 +151,26 @@ if(Meteor.isClient) {
 			$('.reportText').attr('name',currentSlangId);
 			$('.small.modal').modal('show');
 
+		},
+		'keyup .searchInput': function(e){
+	        e.preventDefault();
+			if (e.keyCode == 13) {
+			    // Do something
+
+			    var searchVal = "/search/" + $(e.target).val().toString();
+			    console.log(searchVal);
+			    Router.go(searchVal);
+			    $('[name=searchString]').val('');
+			}
 		}
-	});
-
-	/*Template.indexPage.helpers({
-		slang: function() {
-			return Slang.find();
-		}
-	}); */
+    });
 
 
 
 
+
+
+/*
 	Template.indexPage.rendered = function() {
 
 		// init modal
@@ -175,23 +183,8 @@ if(Meteor.isClient) {
 		// init report slang event listener
 		$('.sendReport').on('click',mailMan);
 
-		$('.genRandom').click(function(e) {
-			/* Act on the event */
-			e.preventDefault();
 
-
-			console.log("fired");
-
-			 Meteor.call('randomPost', function (error, result) {
-		        if (error) {
-		          console.log(error);
-		        } else {
-		          Router.go('randomPage', {_id: result});
-		        }
-		      });
-			});	
-
-	}
+	} */
 
 
 

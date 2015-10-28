@@ -29,10 +29,9 @@
 	</div>
 
 
-
-	{{#EasySearch.Each index=slangIndex }}
-            {{> slangItem}}
-    {{/EasySearch.Each}}
+    {{#each searchItem}}
+		{{> slangItem}}
+    {{/each}}
 
 
 

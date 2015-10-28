@@ -35,5 +35,8 @@ msavin:mongol
 email
 random
 reactive-var
-meteorhacks:search-source
+peerlibrary:assert
+erasaur:meteor-lodash
+peerlibrary:base-component
+peerlibrary:blaze-components
 easy:search

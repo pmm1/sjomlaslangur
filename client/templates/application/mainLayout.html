@@ -39,14 +39,14 @@
 
 <div class="ui fluid container center aligned attached segment" id="searchContainer">
 	<div class="ui container center aligned" id="innerSearchContainer">
-    <form id="search">
+    <!--<form id="search"> -->
   		<div class="ui huge input fluid field">
           <!-- {{> esInput index="slang" placeholder="Leitaðu að hvaða slangri sem er, Sjomli!" convertnumber=true }} -->
-          <!-- <input type="text" placeholder="Leitaðu að hvaða slangri sem er, Sjomli!" class="searchBox" > -->
-          {{> EasySearch.Input index=slangIndex }}
+           <input type="text" placeholder="Leitaðu að hvaða slangri sem er, Sjomli!" class="searchInput" name="searchString" > 
+          <!--{{> EasySearch.Input index=slangIndex }} -->
           <!--{{> esInput index="players" id="search" placeholder="Search players..." convertnumber=true }} -->
   	  </div>
-    </form>
+   <!-- </form> -->
   </div>
 </div>
 <!-- END NAV -->
