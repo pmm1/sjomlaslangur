@@ -1,0 +1,19 @@
+<template name="errors">
+	<div class="ui container">
+		<div class="ten wide column right floated">
+			{{#each errors}}
+				{{> error}}
+			{{/each}}
+		</div>
+	</div>
+</template>
+
+<template name="error">
+<div class="ui warning message">
+  <i class="close icon"></i>
+  <div class="header">
+    Ó, Sjomli!
+  </div>
+  {{message}}, þú getur skráð þig inn <a href="/sign-in">hér</a>.
+</div>
+</template>

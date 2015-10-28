@@ -1,0 +1,83 @@
+<template name="layoutTemplate">
+
+<!-- NAV -->
+<div class="ui attached inverted stackable menu" id="navbar">
+  <div class="ui container">
+    <a href="{{pathFor 'home'}}" id="logoLink" class="item navItem">
+      <div id="imgLogo"></div>
+    </a>
+    <a href="{{pathFor 'newSlang'}}" class="{{activeRouteClass 'home' 'newSlang'}} item navItem">
+      <i class="large inverted green leaf icon"></i> Nýtt
+    </a>
+    <a href="{{pathFor 'bestSlang'}}" class=" {{activeRouteClass 'bestSlang'}} item navItem">
+      <i class="large inverted red fire icon"></i> Heitt
+    </a>
+    <a  class="item navItem genRandom"> <!-- href="{{pathFor 'randomPage'}}" -->
+      <i class="large inverted purple random icon"></i> Slembið
+    </a>
+
+
+     {{#if currentUser}}
+
+
+      <div class="ui dropdown right item navItem">
+      {{currentUser.username}} <i class="dropdown icon"></i>
+      <div class="menu">
+        <a href="{{pathFor 'favorites'}}" class="item"><i class="green star icon"></i>Uppáhalds</a>
+        <a href="{{pathFor 'aboutPage'}}"  class="item"><i class="orange bar icon"></i>Um SjomlaSlangur</a>
+        <a href="/sign-out" class="item"><i class=" blue sign out icon"></i>Útskrá</a>
+      </div>
+    </div>
+    {{else}}
+      <a href="/sign-in" class="right item navItem">
+      <i class="large white spy icon"></i> Innskrá/Nýskrá
+    </a>
+    {{/if}}
+    
+  </div>
+</div>
+
+<div class="ui fluid container center aligned attached segment" id="searchContainer">
+	<div class="ui container center aligned" id="innerSearchContainer">
+    <form id="search">
+  		<div class="ui huge input fluid field">
+          <!-- {{> esInput index="slang" placeholder="Leitaðu að hvaða slangri sem er, Sjomli!" convertnumber=true }} -->
+          <!-- <input type="text" placeholder="Leitaðu að hvaða slangri sem er, Sjomli!" class="searchBox" > -->
+          {{> EasySearch.Input index=slangIndex }}
+          <!--{{> esInput index="players" id="search" placeholder="Search players..." convertnumber=true }} -->
+  	  </div>
+    </form>
+  </div>
+</div>
+<!-- END NAV -->
+
+
+<div id="main">
+{{> errors}}
+{{> yield}}
+</div>
+
+
+
+
+
+<!-- REPORT MODAL -->
+
+<div class="ui small modal">
+  <div class="header">Tilkynna orð</div>
+  <div class="content">
+    <div class="ui large form">
+      <div class="field">
+        <label>Hver er ástæðan fyrir því að þú vilt tilkynna þetta tiltekna slangur?</label>
+        <textarea rows="5" name="" value="" placeholder="Ég vil tilkynna þetta slangur vegna þess að.." class="reportText"></textarea>
+      </div>
+    </div>
+
+  </div>
+  <div class="actions">
+    <div class="ui big blue button sendReport">Senda</div>
+  </div>
+</div>
+
+
+</template>

@@ -1,0 +1,13 @@
+<template name="favorites">
+	<div class="ui container">
+		<div class="ui center aligned stackable grid wordContainer">
+		{{#if noFavorites}}
+			<h3>Þú ert ekki búinn að skrá nein uppáhaldsslangur Sjomli!</h3>
+		{{/if}}
+		
+		{{#each favItem}}
+			{{> favSlangItem}}
+		{{/each}}
+		</div>
+	</div>
+</template>

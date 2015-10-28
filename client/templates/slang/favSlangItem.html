@@ -1,0 +1,60 @@
+<template name="favSlangItem">
+
+	<div class="eleven wide column word ">
+		<div class="ui fluid card wordCard piled segment">
+		  <div class="content">
+		    <h1 class="ui blue center aligned header wordName">{{title}}</h1>
+		    <div class="ui top right attached label socialMediaLabel">
+				
+				<button class="ui circular basic blue icon button">
+				  <i class="facebook icon"></i>
+				</button>
+				<button class="ui circular basic teal icon button">
+				  <i class="twitter icon"></i>
+				</button>
+
+		    </div>
+
+		    <div class="ui top left attached label favoriteLabel">
+				
+				 <span class=" favoriteMe star">
+			      <i class="big inverted orange star icon "></i>
+			    </span>
+
+			</div>
+		    <div class="meta">
+		      <span class="right floated time">{{submitted}}</span>
+		      <span class="left floated username">{{owner}}</span>
+		    </div>
+		    <div class="description">
+		      <p class="definition">{{description}}</p>
+		      <p class="quote">"{{example}}"</p>
+		  </div>
+
+		<div class="ui two tiny statistics favStats">
+		  <div class="inverted blue statistic">
+		    <div class="value">
+		      <i class="thumbs up icon"></i> {{upvotes}}
+		    </div>
+		    <div class="label">
+		      Uppþumlar
+		    </div>
+		  </div>
+
+		  <div class="inverted red statistic">
+		    <div class="value">
+		      <i class=" thumbs down icon"></i> {{downvotes}}
+		    </div>
+		    <div class="label">
+		      Niðurþumlar
+		    </div>
+		  </div>
+		</div>
+	  </div>	 
+	 </div>
+	</div>
+
+</template>
+
+
+

@@ -1,0 +1,25 @@
+<template name="slangSubmit">
+	
+	<div class="ui container addSlangContainer">
+
+		<form class="ui huge form">
+			<div class="field">
+			    <label>Titill</label>
+			    <input type="text" name="title" value="" placeholder="Orðatiltæki/slanguryrði">
+			</div>
+	  		<div class="field">
+			    <label>Skilgreining</label>
+			    <textarea rows="5" name="description" value="" placeholder="Skilgreining á slanguryðinu.."></textarea>
+		  </div>
+		  <div class="field">
+		    <label>Dæmi um notkun</label>
+		    <textarea rows="3" name="example" value="" placeholder="Dæmi um hverning slangrið er notað í talmáli.."></textarea>
+		  </div>
+		  <div class="ui huge centered center aligned green submit button">Submit</div>
+		  <div class="ui error message"></div>
+
+		</form>
+		
+	</div>
+
+</template>

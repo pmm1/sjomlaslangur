@@ -1,0 +1,61 @@
+.tabContentContainer {
+  margin-top:1em;
+  margin-bottom:1em;
+  padding:1em;
+
+}
+
+.tabHeadingContainer {
+  padding:2em;
+  margin:1em;
+}
+
+.featSubHeader {
+  font-size: 18px !important;
+  line-height: 1.4 !important;
+}
+
+.featSubHeaderP {
+  font-size: 18px !important;
+  padding: 0.5em 1.1em 0.5em 1.1em !important;
+  color:rgba(0,0,0,0.6);
+  text-align: left; 
+}
+
+.tabDataContainer {
+  margin-bottom:2.5em;
+  padding:1em;
+}
+
+.featSegment {
+  box-shadow: 0 0 0 0 !important;
+  border:none !important;
+}
+
+
+
+.featSegmentHeader {
+  font-family:'Open Sans','Helvetica-Neueu',Helvetica,sans-serif !important;
+  font-size:2.1em !important;
+  color:#333 !important;
+  padding-left: 0.7em !important;
+}
+
+.featArticleHeader {
+    padding-top: 0.8em !important;
+    padding-bottom: 1em !important;
+    font-size: 32px !important;
+    font-family: "Pt Sans",cursive, Helvetica,sans-serif !important;
+}
+
+
+
+ @media only screen and (max-width: 767px) {
+
+      .articleContainer {
+        margin-left:0 !important;
+        margin-right:0 !important;
+      }
+
+
+    }

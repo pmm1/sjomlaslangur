@@ -1,0 +1,43 @@
+<template name="searchPage">
+
+<div class="ui container">
+	<div class="ui stackable grid wordContainer">
+
+
+	  <div class="ten wide column word addBottomMargin" >
+		<div class="ui fluid card wordCard piled segment">
+		  <div class="content">
+		   </div>
+	    </div>	 
+	  </div>
+
+	<div class="five wide column word addBottomMargin">
+		<div class="ui fluid card wordCard raised segment">
+		  <a class="image" href="{{pathFor 'slangSubmit'}}">
+		    <img src="/img/matthewPenguin.png">
+		  </a>
+		  <div class="content noPadding">
+		    <div class="meta noPadding">
+
+      		<a class="ui fluid orange  icon button " href="{{pathFor 'slangSubmit'}}" id="addWordBtn">
+		  		<i class="icon huge plus"></i>
+	 		 </a>
+    		</div>
+  		  </div>
+
+	  </div>	 
+	</div>
+
+
+
+	{{#EasySearch.Each index=slangIndex }}
+            {{> slangItem}}
+    {{/EasySearch.Each}}
+
+
+
+	</div>
+</div>
+
+
+</template>

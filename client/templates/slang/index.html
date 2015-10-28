@@ -1,0 +1,93 @@
+<template name="indexPage">
+
+<div class="ui container">
+	<div class="ui stackable grid wordContainer">
+
+
+	  <div class="ten wide column word addBottomMargin" >
+		<div class="ui fluid card wordCard piled segment">
+		  <div class="content">
+	      </div>
+	     </div>
+	  </div>
+
+	<div class="five wide column word addBottomMargin">
+		<div class="ui fluid card wordCard raised segment">
+		  <a class="image" href="{{pathFor 'slangSubmit'}}">
+		    <img src="/img/matthewPenguin.png">
+		  </a>
+		  <div class="content noPadding">
+		    <div class="meta noPadding">
+
+      		<a class="ui fluid orange  icon button " href="{{pathFor 'slangSubmit'}}" id="addWordBtn">
+		  		<i class="icon huge plus"></i>
+	 		 </a>
+    		</div>
+  		  </div>
+
+	  </div>	 
+	</div>
+
+
+
+
+
+    {{#each slang}}
+		{{> slangItem}}
+	{{/each}}
+
+	{{#if nextPath}}
+		<div class="ui ten wide column">
+			<a class="load-more" href="{{nextPath}}"><button class="ui massive fluid icon  button"><i class="icon  big caret down"></i></button></a>
+		</div>
+	{{else}}
+		{{#unless ready}}
+			{{> spinning}}
+		{{/unless}}
+	{{/if}}
+
+
+
+
+
+
+
+
+  <!--     {{#esEach index="slang"}}
+            {{> slangItem}}
+        {{/esEach}}
+
+
+    {{#ifEsIsSearching index="slang" id="search" logic="OR" }}
+        {{> loading}}
+    {{/ifEsIsSearching}}
+
+
+    {{#ifEsInputIsEmpty index="slang" id="search" }}
+       {{#each slang}}
+	
+			{{> slangItem}}
+		{{/each}}
+		
+
+
+    {{/ifEsInputIsEmpty}}
+
+    {{#ifEsHasNoResults index="slang" id="search" logic="OR" }}
+            <h3 class="no-results">Við leituðum og leituðum en fundum ekki slangrið , ef þú veist hvað það þýðir þá geturu skilgreint það með því að smella <a href="{{pathFor 'slangSubmit'}}">hér!</a></h3>
+    {{/ifEsHasNoResults}}
+
+    {{! > esLoadMoreButton index="slang" id="search" }}
+    {{> esPagination index="slang" id="search" }}
+
+
+
+
+
+	-->
+
+
+
+	</div>
+</div>
+</template>
