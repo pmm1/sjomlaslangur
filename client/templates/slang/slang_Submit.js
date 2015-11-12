@@ -67,7 +67,7 @@ if (Meteor.isClient) {
   			if (error)
   				return throwError(error.reason);
 
-  			Router.go('indexPage', {_id: result._id});
+  			Router.go('home', {_id: result._id});
   		});
   	}
   });
