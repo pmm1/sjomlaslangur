@@ -1,7 +1,8 @@
 if (Meteor.isClient) {
 
-  Template.layoutTemplate.onRendered(function() {    
-    init();
+
+  Template.layoutTemplate.onRendered(function() {
+
     this.find('#main')._uihooks = {
       insertElement: function(node, next) {
         $(node)
@@ -15,6 +16,8 @@ if (Meteor.isClient) {
         });
       }
     }
+
+    init();
 
 
 
@@ -40,7 +43,7 @@ if (Meteor.isClient) {
               Router.go('randomPage', {_id: result});
             }
           });
-      }); 
+      });
 
 
       $(".searchInput").keyup(function (e) {
@@ -64,7 +67,7 @@ if (Meteor.isClient) {
    Template.layoutTemplate.helpers({
     slangIndex: () => SlangIndex,
     renderTmpl: () => Template.searchPage
-  }); 
+  });
 
 
 

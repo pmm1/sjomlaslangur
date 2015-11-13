@@ -8,7 +8,7 @@ if (Meteor.isClient){
 
 
       if (confirm('Deleta þessum badboi?')) {
-        var current = this._id;
+        var current = this.__originalId;
         Slang.remove(current);
         //Router.go('indexPage');
       };
@@ -19,10 +19,10 @@ if (Meteor.isClient){
 
       if ($(e.target).hasClass('active')) {
         return;
-      }; 
+      };
 
       // Get current slang object
-      var slangId = this._id;
+      var slangId = this.__originalId;
 
       // date & time of upvote
       var upItem = {};
@@ -37,7 +37,7 @@ if (Meteor.isClient){
         $(e.target).addClass('active');
         $(e.target).children().addClass('active');
 
-        
+
 
         Slang.update(slangId, { $inc: {downvotes: -1,upvotes: 1} /*, $push: upItem */ });
         //Slang.update(slangId, {$inc: {upvotes: 1}});
@@ -48,7 +48,7 @@ if (Meteor.isClient){
         Slang.update(slangId, {$inc: {upvotes: 1} /*, $push: upItem */});
 
         $(e.target).addClass('active');
-      }; 
+      };
 
     },
     'click .downvote': function(e) {
@@ -59,7 +59,7 @@ if (Meteor.isClient){
       };
 
       // Get current slang object
-      var slangId = this._id;
+      var slangId = this.__originalId;
 
 
       // you can only upvote or downvote, not both..
@@ -71,7 +71,7 @@ if (Meteor.isClient){
         $(e.target).children().addClass('active');
         Slang.update(slangId, {$inc: {upvotes: -1, downvotes:1} /*, $pop: { upvoteArr: 1 } */});
         //Slang.update(slangId, {$inc: {downvotes: 1}});
-      } else{ 
+      } else{
         Slang.update(slangId, {$inc: {downvotes: 1}});
         $(e.target).addClass('active');
       };
@@ -89,10 +89,10 @@ if (Meteor.isClient){
       var key = 'upvoteArr';
       upItem[key] = moment().format('L');
 
-      
+
 
       // Get current slang object
-      var slangId = this._id;
+      var slangId = this.__originalId;
 
 
       // you can only upvote or downvote, not both..
@@ -106,7 +106,7 @@ if (Meteor.isClient){
         Slang.update(slangId, { $inc: {downvotes: -1,upvotes: 1} /*, $push: upItem */});
         //Slang.update(slangId, {$inc: {downvotes: -1}});
         //Slang.update(slangId, {$inc: {upvotes: 1}});
-      } else{ 
+      } else{
         Slang.update(slangId, {$inc: {upvotes: 1} /*, $push: upItem */});
         $(e.target).addClass('active');
         $(e.target).parent().addClass('active');
@@ -125,7 +125,7 @@ if (Meteor.isClient){
 
       $(e.target).transition('shake');
       // Get current slang object
-      var slangId = this._id;
+      var slangId = this.__originalId;
 
       // you can only upvote or downvote, not both..
       if ($(e.target).parent().prev().hasClass('active')) {
@@ -138,7 +138,7 @@ if (Meteor.isClient){
         //Slang.update(slangId, {$inc: {upvotes: -1}});
         //Slang.update(slangId, {$inc: {downvotes: 1}});
         Slang.update(slangId, {$inc: {upvotes: -1, downvotes:1} /*, $pop: { upvoteArr: 1 } */});
-      } else{ 
+      } else{
         Slang.update(slangId, {$inc: {downvotes: 1}});
         $(e.target).addClass('active');
         $(e.target).parent().addClass('active');
@@ -147,7 +147,7 @@ if (Meteor.isClient){
     'click .reportModal':function(e) {
       e.preventDefault();
 
-      var currentSlangId = this._id;
+      var currentSlangId = this.__originalId;
       $('.reportText').attr('name',currentSlangId);
       $('.small.modal').modal('show');
 
