@@ -5,20 +5,23 @@
 		  <div class="content">
 		    <h1 class="ui blue center aligned header wordName">{{title}}</h1>
 		    <div class="ui top right attached label socialMediaLabel">
-				
-				<button class="ui circular basic blue icon button">
+
+
+					{{> shareit shareData}}
+
+				<!-- <button class="ui circular basic blue icon button">
 				  <i class="facebook icon"></i>
 				</button>
 				<button class="ui circular basic teal icon button">
 				  <i class="twitter icon"></i>
-				</button>
+				</button> -->
 
 		    </div>
 
 		    <div class="ui top left attached label favoriteLabel">
-				
-				 <span class=" favoriteMe star">
-			      <i class="big star icon "></i>
+
+				 <span class=" favoriteMe star {{#if isFavorited}} active {{/if}}">
+			      <i class="big star icon {{#if isFavorited}} inverted orange {{/if}} "></i>
 			    </span>
 
 			</div>
@@ -30,22 +33,17 @@
 		      <p class="definition">{{description}}</p>
 		      <p class="quote">"{{example}}"</p>
 		      {{#if isInRole 'webmaster'}}
-    			<button class="ui red webmasterdelete button" ></button>  
+    			<button class="ui red webmasterdelete button" ></button>
   			  {{/if}}
   			  <span class="ui bottom right attached label reportModal"><a>Tilkynna</a></span>
 		    </div>
 		  </div>
-		  <!-- <div class="extra content">
-		    <div class="right floated author">
-		      <img class="ui avatar image" src="/images/avatar/small/matt.jpg"> Matt
-		    </div>
-		  </div>
-		</div> -->
+
 		<div class="ui two massive bottom attached buttons" >
-		    <div class="ui inverted basic blue icon button upvote ratingBtn" ><i class="big inverted blue thumbs up icon upvoteIcon"></i>{{upvotes}}</div>
-		    <div class="ui inverted basic  red  icon button downvote ratingBtn" ><i class="big inverted red thumbs down icon downvoteIcon"></i>{{downvotes}}</div>
+		    <div class="ui inverted basic blue icon button upvote ratingBtn {{#if isUpvoted}} active {{/if}} " ><i class="big inverted blue thumbs up icon upvoteIcon {{#if isUpvoted}} active {{/if}}"></i>{{upvotes}}</div>
+		    <div class="ui inverted basic  red  icon button downvote ratingBtn {{#if isDownvoted}} active {{/if}}" ><i class="big inverted red thumbs down icon downvoteIcon {{#if isDownvoted}} active {{/if}}"></i>{{downvotes}}</div>
 		</div>
-	  </div>	 
+	  </div>
 	</div>
 
 </template>

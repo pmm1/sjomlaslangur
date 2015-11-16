@@ -5,10 +5,10 @@
 
 
 	  <div class="ten wide column word addBottomMargin" >
-		<div class="ui fluid card wordCard piled segment">
-		  <div class="content">
-	      </div>
-	     </div>
+			<!--<div class="ui fluid card wordCard piled segment">
+			  <div class="content">
+		      </div>
+				</div> -->
 	  </div>
 
 	<div class="five wide column word addBottomMargin">
@@ -25,7 +25,7 @@
     		</div>
   		  </div>
 
-	  </div>	 
+	  </div>
 	</div>
 
 
@@ -45,46 +45,6 @@
 			{{> spinning}}
 		{{/unless}}
 	{{/if}}
-
-
-
-
-
-
-
-
-  <!--     {{#esEach index="slang"}}
-            {{> slangItem}}
-        {{/esEach}}
-
-
-    {{#ifEsIsSearching index="slang" id="search" logic="OR" }}
-        {{> loading}}
-    {{/ifEsIsSearching}}
-
-
-    {{#ifEsInputIsEmpty index="slang" id="search" }}
-       {{#each slang}}
-	
-			{{> slangItem}}
-		{{/each}}
-		
-
-
-    {{/ifEsInputIsEmpty}}
-
-    {{#ifEsHasNoResults index="slang" id="search" logic="OR" }}
-            <h3 class="no-results">Við leituðum og leituðum en fundum ekki slangrið , ef þú veist hvað það þýðir þá geturu skilgreint það með því að smella <a href="{{pathFor 'slangSubmit'}}">hér!</a></h3>
-    {{/ifEsHasNoResults}}
-
-    {{! > esLoadMoreButton index="slang" id="search" }}
-    {{> esPagination index="slang" id="search" }}
-
-
-
-
-
-	-->
 
 
 

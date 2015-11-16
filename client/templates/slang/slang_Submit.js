@@ -20,7 +20,7 @@ if (Meteor.isClient) {
               prompt : 'Nei nú slæ ég þig þvert og yfir moldarbeðið! Þú verður að skilgreina slangrið til þess að geta haldið áfram, Sjomli!'
             }
           ]
-        },      
+        },
         example: {
           identifier: 'example',
           rules: [
@@ -57,8 +57,7 @@ if (Meteor.isClient) {
   			description: $(e.target).find('[name=description]').val(),
   			example: $(e.target).find('[name=example]').val(),
   			upvotes: 0,
-  			downvotes:0,
-        upvoteArr: []
+  			downvotes:0
   		}
 
 

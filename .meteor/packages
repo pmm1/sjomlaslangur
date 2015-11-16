@@ -21,7 +21,6 @@ semantic:ui-css
 iron:router
 useraccounts:semantic-ui
 accounts-password
-accounts-facebook
 useraccounts:iron-routing
 audit-argument-checks
 alanning:roles
@@ -40,3 +39,5 @@ erasaur:meteor-lodash
 peerlibrary:base-component
 peerlibrary:blaze-components
 easy:search
+u2622:persistent-session
+liberation:shareit
