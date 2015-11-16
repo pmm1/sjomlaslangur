@@ -1,9 +1,9 @@
 body {
-	background-color:#F8F8F8;
-	 -webkit-transition: all 1.3s ease;                  
-    -moz-transition: all 1.3s ease;                 
-    -o-transition: all 1.3s ease;   
-    -ms-transition: all 1.3s ease;          
+	background-color:#FDFDFD;
+	 -webkit-transition: all 1.3s ease;
+    -moz-transition: all 1.3s ease;
+    -o-transition: all 1.3s ease;
+    -ms-transition: all 1.3s ease;
     transition: all 1.3s ease;
 }
 
@@ -12,7 +12,7 @@ body {
 	background-color:#363B7A;
 	padding-top:7px;
 	padding-bottom: 0px;
-	
+
 }
 
 #searchContainer {
@@ -95,7 +95,7 @@ p {
 
 .ui.menu .item:before {
     width: 0px !important;
-} 
+}
 
 
 .username {

@@ -64,19 +64,20 @@ Template.slangItem.helpers({
   shareData: function() {
     var current = this._id;
     var theurl = "http://www.sjomlaslangur.com/random/" + current.toString();
-    var tweetLength = 77 + this.title.length;
+    var tweetLength = 44 + this.title.length;
 
-    var lengthLeft = 140 - tweetLength;
+    var lengthLeft = 140 - tweetLength -3;
 
-    var tweetDef = this.definition;
+    var tweetDef = this.description;
 
     if(tweetDef.length > lengthLeft) {
-        tweetDef = tweetDef.substring(0,lengthLeft-3) + "...";
+        tweetDef = tweetDef.substring(0,lengthLeft) + "...";
     }
 
 
     return {
-      title:"Sjomli, vissir þú að " + this.title + " þýðir " + tweetDef + " #sjomlaslangur",
+      //title:"Sjomli, vissir þú að " + this.title + " þýðir " + tweetDef + " #sjomlaslangur",
+      title: this.title + " - " + tweetDef + " #sjomlaslangur",
       //author: "sjomlaslangur",
       url: theurl
     }

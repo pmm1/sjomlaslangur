@@ -23,8 +23,6 @@ if(Meteor.isClient) {
 			e.preventDefault();
 
 
-			//document.location.reload(true);
-
 			 Meteor.call('randomPost', function (error, result) {
 		        if (error) {
 		          console.log(error);
@@ -39,7 +37,7 @@ if(Meteor.isClient) {
 
 			if ($(e.target).hasClass('active')) {
 				return;
-			}; 
+			};
 
 			// Get current slang object
 			var slangId = this._id;
@@ -57,18 +55,17 @@ if(Meteor.isClient) {
 				$(e.target).addClass('active');
 				$(e.target).children().addClass('active');
 
-				
 
-				Slang.update(slangId, { $inc: {downvotes: -1,upvotes: 1} /*, $push: upItem  */});
-				//Slang.update(slangId, {$inc: {upvotes: 1}});
-				//Slang.update()
 
-			} else{
+				Slang.update(slangId, { $inc: {downvotes: -1,upvotes: 1} });
+
+
+			} else {
 
 				Slang.update(slangId, {$inc: {upvotes: 1} /*, $push: upItem */});
 
 				$(e.target).addClass('active');
-			}; 
+			};
 
 		},
 		'click .downvote': function(e) {
@@ -91,7 +88,7 @@ if(Meteor.isClient) {
 				$(e.target).children().addClass('active');
 				Slang.update(slangId, {$inc: {upvotes: -1, downvotes:1} /*, $pop: { upvoteArr: 1 } */});
 				//Slang.update(slangId, {$inc: {downvotes: 1}});
-			} else{	
+			} else{
 				Slang.update(slangId, {$inc: {downvotes: 1}});
 				$(e.target).addClass('active');
 			};
@@ -109,7 +106,7 @@ if(Meteor.isClient) {
 			var key = 'upvoteArr';
 			upItem[key] = moment().format('L');
 
-			
+
 
 			// Get current slang object
 			var slangId = this._id;
@@ -126,7 +123,7 @@ if(Meteor.isClient) {
 				Slang.update(slangId, { $inc: {downvotes: -1,upvotes: 1} /*, $push: upItem */ });
 				//Slang.update(slangId, {$inc: {downvotes: -1}});
 				//Slang.update(slangId, {$inc: {upvotes: 1}});
-			} else{	
+			} else{
 				Slang.update(slangId, {$inc: {upvotes: 1} /*, $push: upItem */});
 				$(e.target).addClass('active');
 				$(e.target).parent().addClass('active');
@@ -155,10 +152,8 @@ if(Meteor.isClient) {
 
 				$(e.target).addClass('active');
 				$(e.target).parent().addClass('active')
-				//Slang.update(slangId, {$inc: {upvotes: -1}});
-				//Slang.update(slangId, {$inc: {downvotes: 1}});
 				Slang.update(slangId, {$inc: {upvotes: -1, downvotes:1} /*, $pop: { upvoteArr: 1 } */});
-			} else{	
+			} else{
 				Slang.update(slangId, {$inc: {downvotes: 1}});
 				$(e.target).addClass('active');
 				$(e.target).parent().addClass('active');

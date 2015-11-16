@@ -19,7 +19,7 @@
   font-size: 18px !important;
   padding: 0.5em 1.1em 0.5em 1.1em !important;
   color:rgba(0,0,0,0.6);
-  text-align: left; 
+  text-align: left;
 }
 
 .tabDataContainer {
@@ -30,6 +30,10 @@
 .featSegment {
   box-shadow: 0 0 0 0 !important;
   border:none !important;
+}
+
+.featSegmentImage {
+  background: transparent !important;
 }
 
 
