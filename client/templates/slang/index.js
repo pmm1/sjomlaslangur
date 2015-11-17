@@ -94,7 +94,7 @@ if(Meteor.isClient) {
 				$(e.target).prev().children().removeClass('active');
 				$(e.target).addClass('active');
 				$(e.target).children().addClass('active');
-				Slang.update(slangId, {$inc: {upvotes: -1, downvotes:1} /*, $pop: { upvoteArr: 1 } */});
+				Slang.update(slangId, {$inc: {upvotes: -1, downvotes:1} });
 				//Slang.update(slangId, {$inc: {downvotes: 1}});
 			} else{
 				Slang.update(slangId, {$inc: {downvotes: 1}});
@@ -137,9 +137,9 @@ if(Meteor.isClient) {
 			$(e.target).transition('bounce');
 
 			// date & time of upvote
-			var upItem = {};
+			/*var upItem = {};
 			var key = 'upvoteArr';
-			upItem[key] = moment().format('L');
+			upItem[key] = moment().format('L'); */
 
 			// Get current slang object
 			var slangId = this._id;
@@ -153,11 +153,11 @@ if(Meteor.isClient) {
 
 				$(e.target).addClass('active');
 				$(e.target).parent().addClass('active')
-				Slang.update(slangId, { $inc: {downvotes: -1,upvotes: 1} /*, $push: upItem */});
+				Slang.update(slangId, { $inc: {downvotes: -1,upvotes: 1} });
 				//Slang.update(slangId, {$inc: {downvotes: -1}});
 				//Slang.update(slangId, {$inc: {upvotes: 1}});
 			} else{
-				Slang.update(slangId, {$inc: {upvotes: 1} /*, $push: upItem */});
+				Slang.update(slangId, {$inc: {upvotes: 1} });
 				$(e.target).addClass('active');
 				$(e.target).parent().addClass('active');
 			};
@@ -215,8 +215,6 @@ if(Meteor.isClient) {
 
 				$(e.target).addClass('active');
 				$(e.target).parent().addClass('active')
-				//Slang.update(slangId, {$inc: {upvotes: -1}});
-				//Slang.update(slangId, {$inc: {downvotes: 1}});
 				Slang.update(slangId, {$inc: {upvotes: -1, downvotes:1} /*, $pop: { upvoteArr: 1 } */});
 			} else{
 				Slang.update(slangId, {$inc: {downvotes: 1}});
@@ -266,7 +264,7 @@ if(Meteor.isClient) {
 			    // Do something
 
 			    var searchVal = "/search/" + $(e.target).val().toString();
-			    console.log(searchVal);
+			    //console.log(searchVal);
 			    Router.go(searchVal);
 			    $('[name=searchString]').val('');
 			}
@@ -278,21 +276,21 @@ if(Meteor.isClient) {
 
 
 
-/*
+
 	Template.indexPage.rendered = function() {
 
 		// init modal
-		$('.small.modal').modal();
+		//$('.small.modal').modal();
 
 		// init dropdown
-		$('.ui.dropdown').dropdown();
+		//$('.ui.dropdown').dropdown();
 
 
 		// init report slang event listener
 		$('.sendReport').on('click',mailMan);
 
 
-	} */
+	}
 
 
 
@@ -303,7 +301,7 @@ if(Meteor.isClient) {
 		var str1 ="id á slangri: " + $('.reportText').attr('name').toString() + "         ";
 		var str2 ="skilaboð frá notanda: " + $('.reportText').val().toString();
 		var message = str1.concat(str2);
-		console.log(message);
+		//console.log(message);
 
 
 		// In your client code: asynchronously send an email

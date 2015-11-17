@@ -120,9 +120,7 @@ if(Meteor.isClient) {
 
 				$(e.target).addClass('active');
 				$(e.target).parent().addClass('active')
-				Slang.update(slangId, { $inc: {downvotes: -1,upvotes: 1} /*, $push: upItem */ });
-				//Slang.update(slangId, {$inc: {downvotes: -1}});
-				//Slang.update(slangId, {$inc: {upvotes: 1}});
+				Slang.update(slangId, { $inc: {downvotes: -1,upvotes: 1}  });
 			} else{
 				Slang.update(slangId, {$inc: {upvotes: 1} /*, $push: upItem */});
 				$(e.target).addClass('active');
@@ -152,7 +150,7 @@ if(Meteor.isClient) {
 
 				$(e.target).addClass('active');
 				$(e.target).parent().addClass('active')
-				Slang.update(slangId, {$inc: {upvotes: -1, downvotes:1} /*, $pop: { upvoteArr: 1 } */});
+				Slang.update(slangId, {$inc: {upvotes: -1, downvotes:1} });
 			} else{
 				Slang.update(slangId, {$inc: {downvotes: 1}});
 				$(e.target).addClass('active');

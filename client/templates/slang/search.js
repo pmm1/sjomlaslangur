@@ -142,9 +142,9 @@ if (Meteor.isClient){
       $(e.target).transition('bounce');
 
       // date & time of upvote
-      var upItem = {};
+      /* var upItem = {};
       var key = 'upvoteArr';
-      upItem[key] = moment().format('L');
+      upItem[key] = moment().format('L'); */
 
 
 
@@ -203,9 +203,9 @@ if (Meteor.isClient){
       };
 
       // date & time of upvote
-      var upItem = {};
+      /*var upItem = {};
       var key = 'upvoteArr';
-      upItem[key] = moment();
+      upItem[key] = moment(); */
 
       $(e.target).transition('shake');
       // Get current slang object
