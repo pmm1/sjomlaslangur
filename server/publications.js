@@ -6,7 +6,7 @@ if (Meteor.isServer) {
 			limit: Number
 		});
 		return Slang.find({}, options);
-	}); 
+	});
 
 
 
@@ -22,8 +22,14 @@ if (Meteor.isServer) {
 			return Slang.find({'_id':{$in:arr}});
 	});
 
+	Meteor.publish('usersDoc', function(sjomli) {
+		check(sjomli, String);
+		return Slang.find({ owner: sjomli});
+	});
+
+
+
 
 
 
 }
-

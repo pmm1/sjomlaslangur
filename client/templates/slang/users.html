@@ -1,0 +1,48 @@
+<template name="userPage">
+
+<div class="ui container">
+  <h2 class="ui header">
+    <img src="/img/sjomli.png" class="ui mini circular image">
+
+    {{#each userObj}}
+        {{#if noDefinitions}}<span class="usernameHeader">{{owner}}</span> hefur ekki skilgreint neitt slangur! :o{{else}}Slangur sem <span class="usernameHeader">{{owner}}</span> hefur skilgreint.. {{/if}}
+    {{/each}}
+  </h2>
+</div>
+
+  <div class="ui container">
+  	<div class="ui stackable grid wordContainer">
+
+
+  	  <div class="ten wide column word addBottomMargin" >
+  	  </div>
+
+  	<div class="five wide column word addBottomMargin">
+  		<div class="ui fluid card wordCard raised segment">
+  		  <a class="image" href="{{pathFor 'slangSubmit'}}">
+  		    <img src="/img/matthewPenguin.png">
+  		  </a>
+  		  <div class="content noPadding">
+  		    <div class="meta noPadding">
+
+        		<a class="ui fluid orange  icon button " href="{{pathFor 'slangSubmit'}}" id="addWordBtn">
+  		  		<i class="icon huge wizard"></i>
+  	 		 </a>
+      		</div>
+    		  </div>
+
+  	  </div>
+  	</div>
+
+
+      {{#each userSlang}}
+  			{{> slangItem}}
+      {{/each}}
+
+
+
+  	</div>
+  </div>
+
+
+</template>

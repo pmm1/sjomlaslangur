@@ -1,3 +1,7 @@
+if (Meteor.isClient) {
+
+
+
 
 Template.slangItem.helpers({
   isUpvoted: function() {
@@ -83,3 +87,31 @@ Template.slangItem.helpers({
     }
   }
 });
+
+
+
+Template.favSlangItem.helpers({
+  shareData: function() {
+    var current = this._id;
+    var theurl = "http://www.sjomlaslangur.com/random/" + current.toString();
+    var tweetLength = 44 + this.title.length;
+
+    var lengthLeft = 140 - tweetLength -3;
+
+    var tweetDef = this.description;
+
+    if(tweetDef.length > lengthLeft) {
+        tweetDef = tweetDef.substring(0,lengthLeft) + "...";
+    }
+
+    return {
+      //title:"Sjomli, vissir þú að " + this.title + " þýðir " + tweetDef + " #sjomlaslangur",
+      title: this.title + " - " + tweetDef + " #sjomlaslangur",
+      //author: "sjomlaslangur",
+      url: theurl
+    }
+
+  }
+});
+
+}

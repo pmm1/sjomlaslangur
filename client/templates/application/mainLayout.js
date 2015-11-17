@@ -29,20 +29,20 @@ if (Meteor.isClient) {
       $('.small.modal').modal();
 
       $('.genRandom').click(function(e) {
-      /* Act on the event */
-       e.preventDefault();
+        /* Act on the event */
+         e.preventDefault();
 
-      $('.sendReport').on('click',mailMan);
+        $('.sendReport').on('click',mailMan);
 
 
 
-       Meteor.call('randomPost', function (error, result) {
-            if (error) {
-              console.log(error);
-            } else {
-              Router.go('randomPage', {_id: result});
-            }
-          });
+         Meteor.call('randomPost', function (error, result) {
+              if (error) {
+                console.log(error);
+              } else {
+                Router.go('randomPage', {_id: result});
+              }
+            });
       });
 
 
@@ -63,12 +63,12 @@ if (Meteor.isClient) {
 
 });
 
-
+/*
    Template.layoutTemplate.helpers({
     slangIndex: () => SlangIndex,
     renderTmpl: () => Template.searchPage
   });
-
+*/
 
 
 };

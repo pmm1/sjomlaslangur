@@ -1,5 +1,16 @@
 <template name="searchPage">
 
+
+	<div class="ui container">
+	  <h3 class="ui center aligned header">
+	    <!--<img src="/img/sjomli.png" class="ui mini circular image"> -->
+
+
+	        {{#if noResults }} Ó, nei! Leit þín að <span class="usernameHeader">{{#each searchObj}}{{searchString}}{{/each}}</span> skilaði engum niðurstöðum! :O  Endilega skilgreindu slangrið með því að smella <a href="/submit">hér!</a> :D{{/if}}
+
+	  </h3>
+	</div>
+
 <div class="ui container">
 	<div class="ui stackable grid wordContainer">
 
@@ -7,7 +18,7 @@
 	  <div class="ten wide column word addBottomMargin" >
 	  </div>
 
-	<div class="five wide column word addBottomMargin">
+	<div class="five {{#if noResults}} fela {{/if}} wide column word addBottomMargin">
 		<div class="ui fluid card wordCard raised segment">
 		  <a class="image" href="{{pathFor 'slangSubmit'}}">
 		    <img src="/img/matthewPenguin.png">
@@ -16,7 +27,7 @@
 		    <div class="meta noPadding">
 
       		<a class="ui fluid orange  icon button " href="{{pathFor 'slangSubmit'}}" id="addWordBtn">
-		  		<i class="icon huge plus"></i>
+		  		<i class="icon huge wizard"></i>
 	 		 </a>
     		</div>
   		  </div>
@@ -29,7 +40,7 @@
 			{{> slangItem}}
     {{/each}}
 
-
+		<!--{{#if noResults }} Ó, nei! Leit þín að <span class="usernameHeader">{{searchString}}</span> Skilaði engum niðurstöðum! :O <br> Ef þú veist hvað það þýðir þá endilega smelltu <a href="/submit">hér</a>{{/if}} -->
 
 	</div>
 </div>

@@ -5,7 +5,7 @@ if(Meteor.isClient) {
 
 
 
-	Template.indexPage.events({
+	Template.slangItem.events({
 		'click .webmasterdelete': function(e) {
 			e.preventDefault();
 

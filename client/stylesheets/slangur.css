@@ -8,6 +8,10 @@ body {
 }
 
 
+.fela {
+	display: none !important;
+}
+
 #navbar {
 	background-color:#363B7A;
 	padding-top:7px;
@@ -99,10 +103,14 @@ p {
 
 
 .username {
-	color:#2185d0;
-	font-weight:bold;
-	font-family:sans-serif;
-	font-size:15px;
+	color:#4183C9;
+	font-family:lato, sans-serif, helvetica;
+	font-size:14px;
+	font-style:italic;
+}
+
+.usernameHeader {
+	color: #4183C9 !important;
 }
 
 .noPadding {

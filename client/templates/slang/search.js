@@ -1,6 +1,49 @@
 
 if (Meteor.isClient){
 
+  Template.searchPage.helpers({
+    noResults: function(){
+
+      //var arr = this.searchItem;
+      //console.log(arr);
+      var arr = [];
+
+      //console.log(this);
+
+      //arr.push(this);
+
+      //console.log(this);
+
+      //console.log(this.searchItem);
+
+      if (this.searchItem != undefined) {
+        console.log(this.searchItem.length);
+        Session.set("searchResultsNumber", this.searchItem.length);
+      }
+
+      console.log(Session.get("searchResultsNumber"));
+
+
+      if (Session.get("searchResultsNumber") == 0) {
+        return true;
+      } else {
+        return false;
+      }
+
+
+    },
+    searchObj: function() {
+
+        // super hacky way of getting the searchString from the url...
+        var url = Router.current().url;
+        var strArr = url.split("/");
+        var str = strArr[strArr.length - 1];
+        var obj = [{searchString: str}];
+        //console.log(obj);
+        return obj;
+    }
+  });
+
 
   Template.searchPage.events({
     'click .webmasterdelete': function(e) {
