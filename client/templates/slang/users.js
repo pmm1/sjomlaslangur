@@ -7,7 +7,7 @@ if (Meteor.isClient) {
 		noDefinitions: function() {
       var arr = Slang.find().fetch();
       //console.log(arr);
-      console.log(arr);
+      //console.log(arr);
       if (arr.length == 0 ) {
         return true;
       } else {
