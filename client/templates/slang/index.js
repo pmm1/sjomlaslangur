@@ -11,7 +11,12 @@ if(Meteor.isClient) {
 
 
 			if (confirm('Deleta þessum badboi?')) {
-				var current = this._id;
+				if (Router.current().route.getName() == "searchPage") {
+					var current = this.__originalId;
+				} else {
+					var current = this._id;
+				}
+
 				Slang.remove(current);
 				//Router.go('indexPage');
 			};
@@ -25,7 +30,11 @@ if(Meteor.isClient) {
 			};
 
 			// Get current slang object
-			var slangId = this._id;
+			if (Router.current().route.getName() == "searchPage" ) {
+				var slangId = this.__originalId;
+			}else {
+				var slangId = this._id;
+			}
 
 			// date & time of upvote
 			var upItem = {};
@@ -84,7 +93,11 @@ if(Meteor.isClient) {
 			};
 
 			// Get current slang object
-			var slangId = this._id;
+			if (Router.current().route.getName() == "searchPage" ) {
+				var slangId = this.__originalId;
+			}else {
+				var slangId = this._id;
+			}
 
 
 			// you can only upvote or downvote, not both..
@@ -142,7 +155,11 @@ if(Meteor.isClient) {
 			upItem[key] = moment().format('L'); */
 
 			// Get current slang object
-			var slangId = this._id;
+			if (Router.current().route.getName() == "searchPage" ) {
+				var slangId = this.__originalId;
+			}else {
+				var slangId = this._id;
+			}
 
 
 			// you can only upvote or downvote, not both..
@@ -205,7 +222,11 @@ if(Meteor.isClient) {
 
 			$(e.target).transition('shake');
 			// Get current slang object
-			var slangId = this._id;
+			if (Router.current().route.getName() == "searchPage" ) {
+				var slangId = this.__originalId;
+			}else {
+				var slangId = this._id;
+			}
 
 			// you can only upvote or downvote, not both..
 			if ($(e.target).parent().prev().hasClass('active')) {
@@ -253,7 +274,11 @@ if(Meteor.isClient) {
 		'click .reportModal':function(e) {
 			e.preventDefault();
 
-			var currentSlangId = this._id;
+			if (Router.current().route.getName() == "searchPage" ) {
+				var slangId = this.__originalId;
+			}else {
+				var slangId = this._id;
+			}
 			$('.reportText').attr('name',currentSlangId);
 			$('.small.modal').modal('show');
 
@@ -279,11 +304,6 @@ if(Meteor.isClient) {
 
 	Template.indexPage.rendered = function() {
 
-		// init modal
-		//$('.small.modal').modal();
-
-		// init dropdown
-		//$('.ui.dropdown').dropdown();
 
 
 		// init report slang event listener

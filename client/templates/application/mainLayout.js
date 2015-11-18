@@ -63,12 +63,7 @@ if (Meteor.isClient) {
 
 });
 
-/*
-   Template.layoutTemplate.helpers({
-    slangIndex: () => SlangIndex,
-    renderTmpl: () => Template.searchPage
-  });
-*/
+
 
 
 };

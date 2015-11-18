@@ -1,5 +1,13 @@
 {
-  "public": {
-
-  }
+    "public": {
+        "ga": {
+            "id": "UA-70316014-1",
+            "create": {
+                "cookieDomain": "sjomlaslangur.com",
+                "cookieName": "my_ga_cookie",
+                "cookieExpires": 3600
+            },
+            "trackUserId": true
+        }
+    }
 }

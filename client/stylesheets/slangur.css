@@ -12,6 +12,18 @@ body {
 	display: none !important;
 }
 
+.submitHeader {
+	padding-bottom:40px !important;
+}
+
+.share-buttons {
+	display:inline-block;
+}
+
+.getLink {
+	display: inline-block;
+}
+
 #navbar {
 	background-color:#363B7A;
 	padding-top:7px;
@@ -28,6 +40,12 @@ body {
 	padding-bottom: 16px;
 	padding-top:2px;
 
+}
+
+.addbtnFont {
+	color: #fff !important;
+	font-family:lato, helvetica,sans-serif;
+	font-size:36px !important;
 }
 
 #innerSearchContainer {

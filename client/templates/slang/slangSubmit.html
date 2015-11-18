@@ -1,8 +1,20 @@
 <template name="slangSubmit">
-	
+
 	<div class="ui container addSlangContainer">
 
+		<div class="ui container center aligned  submitHeader">
+			<h2 class="ui dividing header">
+			  <i class="idea icon"></i>
+			  <div class="content">
+				  Nýtt sjomlaslangur
+			    <!--<div class="sub header">Partymörgæsin er spennt!</div> -->
+			  </div>
+			</h2>
+
+		</div>
+
 		<form class="ui huge form">
+
 			<div class="field">
 			    <label>Titill</label>
 			    <input type="text" name="title" value="" placeholder="Orðatiltæki/slanguryrði">
@@ -15,11 +27,11 @@
 		    <label>Dæmi um notkun</label>
 		    <textarea rows="3" name="example" value="" placeholder="Dæmi um hverning slangrið er notað í talmáli.."></textarea>
 		  </div>
-		  <div class="ui huge centered center aligned green submit button">Submit</div>
+		  <div class="ui huge centered center aligned green submit button">Bæta við</div>
 		  <div class="ui error message"></div>
 
 		</form>
-		
+
 	</div>
 
 </template>

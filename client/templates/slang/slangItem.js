@@ -3,6 +3,27 @@ if (Meteor.isClient) {
 
 
 
+
+Template.slangItem.events({
+  "click .getLink": function(e){
+    e.preventDefault();
+    $(e.target).popup('toggle');
+  }
+
+});
+
+
+
+
+Template.slangItem.onRendered(function() {
+   // init clipboard func
+   var zeroClipboard = new ZeroClipboard($(".getLink"));
+   $('.getLink').popup();
+
+});
+
+
+
 Template.slangItem.helpers({
   isUpvoted: function() {
     var localPage = Router.current().route.getName();
